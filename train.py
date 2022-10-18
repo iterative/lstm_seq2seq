@@ -99,7 +99,5 @@ model.fit(
     batch_size=batch_size,
     epochs=epochs,
     validation_split=0.2,
-    callbacks=[DvcLiveCallback(path="results", report=None)]
+    callbacks=[DvcLiveCallback(path="results", model_file="s2s", report=None)]
 )
-# Save model
-model.save("s2s")
