@@ -13,3 +13,31 @@ stages:
     - path: fra.txt
       md5: c81225a6f6e00dfa0fcdbbf3862528c2
       size: 29787538
+  train:
+    cmd: python train.py
+    deps:
+    - path: fra.txt
+      md5: c81225a6f6e00dfa0fcdbbf3862528c2
+      size: 29787538
+    - path: train.py
+      md5: 625f6ed82719c0f296ac33cdbd7f8e23
+      size: 4239
+    params:
+      params.py:
+        batch_size: 64
+        data_path: fra.txt
+        epochs: 1
+        latent_dim: 256
+        num_samples: 10000
+    outs:
+    - path: results
+      md5: df4563ab4957fe36765390cdff33c197.dir
+      size: 258
+      nfiles: 4
+    - path: results.json
+      md5: 81ac902277da2cd290a60132a0713c05
+      size: 210
+    - path: s2s
+      md5: fe9f927e8aca14e688b8a91b81d351b9.dir
+      size: 7229708
+      nfiles: 4
