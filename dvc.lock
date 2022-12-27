@@ -31,13 +31,13 @@ stages:
         num_samples: 10000
     outs:
     - path: results/metrics.json
-      md5: 4d616edeca7577fc2b51c7a0c34afc20
-      size: 210
+      md5: 749e4c451d45e55d3d0d5b89442060b1
+      size: 209
     - path: results/plots
-      md5: 2d5021cb90e664a94c8f59ad4c9faefe.dir
-      size: 154
+      md5: 9de19f9c2e30b01dfe3c6ef7252a3f39.dir
+      size: 153
       nfiles: 4
     - path: s2s
-      md5: 2aaf8c51ca6f92296396dd75aefcfb0f.dir
+      md5: 04d4c468e900524e28ba065042366890.dir
       size: 7228226
       nfiles: 5
