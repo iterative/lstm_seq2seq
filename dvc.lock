@@ -1,0 +1,41 @@
+schema: '2.0'
+stages:
+  download:
+    cmd:
+    - curl -O http://www.manythings.org/anki/fra-eng.zip
+    - unzip fra-eng.zip
+    - rm _about.txt fra-eng.zip
+    deps:
+    - path: http://www.manythings.org/anki/fra-eng.zip
+      checksum: '22212084778430219865163364038915568990'
+      size: 6720195
+    outs:
+    - path: fra.txt
+      md5: c81225a6f6e00dfa0fcdbbf3862528c2
+      size: 29787538
+  train:
+    cmd: python train.py
+    deps:
+    - path: fra.txt
+      md5: c81225a6f6e00dfa0fcdbbf3862528c2
+      size: 29787538
+    - path: train.py
+      md5: 8a162d3e8e1c30aa318a4948d27e7b8d
+      size: 6448
+    params:
+      params.py:
+        batch_size: 64
+        data_path: fra.txt
+        latent_dim: 256
+        lr: 0.01
+        num_samples: 100000
+        seed: 423
+    outs:
+    - path: model/model.ckpt
+    - path: results/metrics.json
+      md5: 98a1bc001f0a45d5a8ef1ff5a8b71c25
+      size: 162
+    - path: results/plots
+      md5: 8957b04c292ad10d491388c55c0d8727.dir
+      size: 101
+      nfiles: 3
