@@ -36,9 +36,9 @@ stages:
       md5: 25f6a1aab76db4b3b8d133ae3873e4b1
       size: 349185
     - path: results/metrics.json
-      md5: b93674e3f7d4bdde898c73ffb3ba0776
-      size: 507
+      md5: 0648a210440a4751a0e28d8a9d94b8fb
+      size: 506
     - path: results/plots
-      md5: e200683c0d3091594adcd0b4807c28dc.dir
-      size: 9731
+      md5: ade695c54d8bfd0809d6b43b0ffa6016.dir
+      size: 9776
       nfiles: 9
