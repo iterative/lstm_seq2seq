@@ -33,12 +33,12 @@ stages:
         seed: 423
     outs:
     - path: model/model.ckpt
-      md5: df5cba4505dc8b5a7c41de7c641b3758
+      md5: 25f6a1aab76db4b3b8d133ae3873e4b1
       size: 349185
     - path: results/metrics.json
-      md5: bd44ca235f5ace6f85fd98f919fa86f4
+      md5: 650fa21f9d3fa44443eec14b742a9a3c
       size: 508
     - path: results/plots
-      md5: f64bc6fdd10a55ce3ab6d63f132fcc28.dir
-      size: 8366
+      md5: 954dc44ba7a9a096ae5532e3da10684b.dir
+      size: 8413
       nfiles: 9
