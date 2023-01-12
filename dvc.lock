@@ -33,9 +33,9 @@ stages:
     outs:
     - path: model/model.ckpt
     - path: results/metrics.json
-      md5: f70c0937a5122eb68936b092258af121
-      size: 290
+      md5: ea30cae1ab1caf65c0694ba31f227f54
+      size: 289
     - path: results/plots
-      md5: 0ef3797c6eb9532fe9122e9af2d39749.dir
-      size: 4006
+      md5: 37b5d040a896092772b6c8b2eeeee610.dir
+      size: 4050
       nfiles: 5
