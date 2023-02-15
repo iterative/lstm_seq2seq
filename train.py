@@ -120,6 +120,11 @@ class LSTMSeqToSeq(pl.LightningModule):
         self.log("val_loss", loss, on_step=True, on_epoch=True)
         self.log("val_acc", acc, on_step=True, on_epoch=True)
 
+    def predict_step(self, batch, batch_idx):
+        (x_encoder, x_decoder), y = batch
+        out = self(x_encoder, x_decoder)
+        return out
+
     def configure_optimizers(self):
         optimizer = torch.optim.RMSprop(self.parameters(), lr=lr)
         return optimizer
@@ -161,7 +166,21 @@ checkpoint = pl.callbacks.ModelCheckpoint(
         save_weights_only=True, every_n_epochs=1)
 timer = pl.callbacks.Timer(duration=duration)
 
-trainer = pl.Trainer(max_epochs=-1, logger=[live],
+trainer = pl.Trainer(max_epochs=5, logger=[live],
                      callbacks=[timer, checkpoint])
 trainer.fit(model=arch, train_dataloaders=train_loader,
         val_dataloaders=val_loader)
+
+
+# Save predictions
+preds_loader = torch.utils.data.DataLoader(val, batch_size=10)
+preds = trainer.predict(dataloaders=preds_loader)
+os.makedirs("predictions", exist_ok=True)
+batch = preds[0]
+for sample_idx, sample in enumerate(batch):
+    sample_txt = ""
+    indices = sample.argmax(dim=1)
+    for char_idx in indices:
+        sample_txt += target_characters[char_idx]
+    with open(f"predictions/{sample_idx}.txt", "w") as f:
+        f.write(sample_txt)
