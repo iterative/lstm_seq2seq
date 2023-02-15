@@ -40,9 +40,9 @@ stages:
       size: 1540
       nfiles: 10
     - path: results/metrics.json
-      md5: 34d4ed95bc786414a9fe95f66c4dc8e0
-      size: 504
+      md5: 9930580dcc8ee9bae6cc6657a9632e08
+      size: 505
     - path: results/plots
-      md5: 8a2bb29fb5117444d43f8e5c3c8e3bfb.dir
-      size: 1206
+      md5: b6a6f780303f3cdcd1afc30f7b101922.dir
+      size: 1251
       nfiles: 9
