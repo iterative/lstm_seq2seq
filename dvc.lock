@@ -33,16 +33,16 @@ stages:
         seed: 423
     outs:
     - path: model/model.ckpt
-      md5: 7fc6b09c82ae5d60af7e6029a1f083e5
+      md5: a25fb404848d7de30870dc696e7927af
       size: 108289
     - path: predictions
       md5: a8d8de9cbc73457ff9b695a2986199da.dir
       size: 1540
       nfiles: 10
     - path: results/metrics.json
-      md5: d676248ea854909497a1f20980556cf2
+      md5: 34d4ed95bc786414a9fe95f66c4dc8e0
       size: 504
     - path: results/plots
-      md5: ce3cd4d3e2eec8a587913dbdbf41ba0a.dir
-      size: 1157
+      md5: 8a2bb29fb5117444d43f8e5c3c8e3bfb.dir
+      size: 1206
       nfiles: 9
