@@ -36,7 +36,7 @@ stages:
       md5: 9d2c1c84e74fcd07bdd0949d149aa97f
       size: 108289
     - path: predictions
-      md5: a8d8de9cbc73457ff9b695a2986199da.dir
+      md5: bdbbb9899aa0d5b42ceeee17aae0c1d4.dir
       size: 1540
       nfiles: 10
     - path: results/metrics.json
