@@ -27,10 +27,10 @@ stages:
         data_path: fra.txt
         model:
           batch_size: 512
-          latent_dim: 16
+          latent_dim: 128
           lr: 0.01
           duration: 00:00:30:00
-          max_epochs: 2
+          max_epochs: -1
         num_samples: 100000
         seed: 423
     outs:
@@ -41,6 +41,6 @@ stages:
       md5: 99914b932bd37a50b983c5e7c90ae93b
       size: 2
     - path: results/plots
-      md5: f0df82b8295e65705cdc82d949b578ac.dir
-      size: 659
-      nfiles: 7
+      md5: d751713988987e9331980363e24189ce.dir
+      size: 0
+      nfiles: 0
