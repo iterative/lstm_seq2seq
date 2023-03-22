@@ -1,6 +1,6 @@
 model:
   batch_size: 512
-  latent_dim: 16
+  latent_dim: 8
   lr: 0.01
   duration: 00:00:30:00
   max_epochs: 2
