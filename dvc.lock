@@ -27,7 +27,7 @@ stages:
         data_path: fra.txt
         model:
           batch_size: 512
-          latent_dim: 16
+          latent_dim: 80
           lr: 0.01
           duration: 00:00:30:00
           max_epochs: 2
@@ -38,9 +38,9 @@ stages:
       md5: 0f6376fb11a6ef0fdeba407badb70726
       size: 108609
     - path: results/metrics.json
-      md5: 99914b932bd37a50b983c5e7c90ae93b
-      size: 2
+      md5: 16627eff8aa689145f683ca655cff4a5
+      size: 362
     - path: results/plots
-      md5: f0df82b8295e65705cdc82d949b578ac.dir
-      size: 659
+      md5: b64b29de5bc0ee47617e8c1ef356b44e.dir
+      size: 585
       nfiles: 7
