@@ -26,8 +26,8 @@ stages:
       params.yaml:
         data_path: fra.txt
         model:
-          batch_size: 512
-          latent_dim: 16
+          batch_size: 256
+          latent_dim: 8
           lr: 0.01
           duration: 00:00:30:00
           max_epochs: 2
@@ -38,9 +38,9 @@ stages:
       md5: 0f6376fb11a6ef0fdeba407badb70726
       size: 108609
     - path: results/metrics.json
-      md5: 99914b932bd37a50b983c5e7c90ae93b
-      size: 2
+      md5: d0ccc84a652fb11a88f257fd98341d82
+      size: 363
     - path: results/plots
-      md5: f0df82b8295e65705cdc82d949b578ac.dir
-      size: 659
+      md5: 29ea45be6fba1ce8253c046f5308590e.dir
+      size: 902
       nfiles: 7
