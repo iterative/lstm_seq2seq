@@ -27,20 +27,20 @@ stages:
         data_path: fra.txt
         model:
           batch_size: 512
-          latent_dim: 16
+          latent_dim: 8
           lr: 0.01
           duration: 00:00:30:00
           max_epochs: 2
-        num_samples: 100000
+        num_samples: 10000
         seed: 423
     outs:
     - path: model/model.ckpt
       md5: 0f6376fb11a6ef0fdeba407badb70726
       size: 108609
     - path: results/metrics.json
-      md5: 99914b932bd37a50b983c5e7c90ae93b
-      size: 2
+      md5: 230821c0444d1436cc63f9d30939e089
+      size: 253
     - path: results/plots
-      md5: f0df82b8295e65705cdc82d949b578ac.dir
-      size: 659
-      nfiles: 7
+      md5: f3d4d0261035a557b826af993b4a90b1.dir
+      size: 244
+      nfiles: 5
