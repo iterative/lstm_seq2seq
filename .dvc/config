@@ -2,5 +2,9 @@
     remote = s3cache
 [hydra]
     enabled = True
+[feature]
+    /* studio_token = isat_krVuC6UWZShWmc6iRSGmYIWncHzpLKwdurdzgz2nhFGhuziV */
+    push_exp_to_studio = True
+    studio_token = isat_krVuC6UWZShWmc6iRSGmYIWncHzpLKwdurdzgz2nhFGhuziV
 ['remote "s3cache"']
     url = s3://lstm-seq2seq/cache

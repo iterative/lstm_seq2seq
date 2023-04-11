@@ -7,18 +7,18 @@ stages:
     - rm _about.txt fra-eng.zip
     deps:
     - path: http://www.manythings.org/anki/fra-eng.zip
-      checksum: '33473984774969389833272906710854276175'
-      size: 7155035
+      checksum: '233560121845505482666094644464373105096'
+      size: 7420323
     outs:
     - path: fra.txt
-      md5: df3f29f57cbe8a45787cac25a9a049ba
-      size: 31547877
+      md5: 62fa1633dbf3f3d56cfb695f5f4fabe8
+      size: 32822533
   train:
     cmd: python train.py
     deps:
     - path: fra.txt
-      md5: df3f29f57cbe8a45787cac25a9a049ba
-      size: 31547877
+      md5: 62fa1633dbf3f3d56cfb695f5f4fabe8
+      size: 32822533
     - path: train.py
       md5: 06cf41493f48d027ed990f2a2aa4fb16
       size: 6745
@@ -27,20 +27,20 @@ stages:
         data_path: fra.txt
         model:
           batch_size: 512
-          latent_dim: 16
-          lr: 0.01
+          latent_dim: 8
+          lr: 0.1
           duration: 00:00:30:00
-          max_epochs: 2
-        num_samples: 100000
+          max_epochs: 5
+        num_samples: 10000
         seed: 423
     outs:
     - path: model/model.ckpt
       md5: 0f6376fb11a6ef0fdeba407badb70726
       size: 108609
     - path: results/metrics.json
-      md5: 99914b932bd37a50b983c5e7c90ae93b
-      size: 2
+      md5: ef9c562850f75e268cafad01c48fd21e
+      size: 360
     - path: results/plots
-      md5: f0df82b8295e65705cdc82d949b578ac.dir
-      size: 659
+      md5: 87f1d1d724a86a4a1a64f560b1ee1443.dir
+      size: 607
       nfiles: 7
