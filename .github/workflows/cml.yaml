@@ -44,9 +44,7 @@ jobs:
           pip install --upgrade -r requirements.txt
 
           dvc pull --allow-missing
-          dvc exp run -S model=full
+          dvc exp run -S model=full -n pmrowla-test
           dvc exp push -v --rev HEAD origin
- 
-          git add .
-          git commit -m "experiment results"
-          git push
+
+          git push origin `git show-ref pmrowla-test | awk '{print $2}`:`git show-ref pmrowla-test | awk '{print $2}`
