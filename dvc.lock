@@ -20,7 +20,7 @@ stages:
       md5: 62fa1633dbf3f3d56cfb695f5f4fabe8
       size: 32822533
     - path: train.py
-      md5: 06cf41493f48d027ed990f2a2aa4fb16
+      md5: b2d6aeeef0f0dbe393958e8fac149b7e
       size: 6745
     params:
       params.yaml:
@@ -38,9 +38,9 @@ stages:
       md5: 0f6376fb11a6ef0fdeba407badb70726
       size: 108609
     - path: results/metrics.json
-      md5: dca154aa3352a1ed6501ddffec068de8
-      size: 363
+      md5: 16b50a9a21e0038678c9f294612a4e76
+      size: 368
     - path: results/plots
-      md5: 6e9d891e553fcfe06b763fb0e29062d9.dir
-      size: 2962
+      md5: 49124f4080fe312aa9120b784e208bcc.dir
+      size: 2450
       nfiles: 7
