@@ -1,2 +1,3 @@
 latent_dim: 32
-optim_params: "{'lr': 0.01, 'momentum': 0.01}"
+optim_params: "{'lr': 0.009651472669393297, 'momentum': 0.4340281528295088, 'alpha':\
+  \ 0.9502283062314927, 'weight_decay': 0.014397810072700683}"
