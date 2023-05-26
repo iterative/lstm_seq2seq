@@ -20,13 +20,8 @@ stages:
       md5: 62fa1633dbf3f3d56cfb695f5f4fabe8
       size: 32822533
     - path: train.py
-<<<<<<< HEAD
       md5: 86ea72f877ec75d99b1d2b389d80e3b8
       size: 6994
-=======
-      md5: b2d6aeeef0f0dbe393958e8fac149b7e
-      size: 6745
->>>>>>> 5d3c526a483fd73717ccc1884a5521c48dc75ab8
     params:
       params.yaml:
         data_path: fra.txt
@@ -41,20 +36,12 @@ stages:
         seed: 423
     outs:
     - path: model/model.ckpt
-      md5: 0f6376fb11a6ef0fdeba407badb70726
-      size: 108609
+      md5: 20b304c5ca340af0321ece421cb5a45d
+      size: 19969
     - path: results/metrics.json
-<<<<<<< HEAD
-      md5: 2299d804ce6feb7f2a982ca887b79796
-      size: 368
+      md5: 8ffff12d04ac63dd1fab04d99aa5d22e
+      size: 349
     - path: results/plots
-      md5: 44631913594071b909fad6b21dfd005b.dir
-      size: 598
-=======
-      md5: 16b50a9a21e0038678c9f294612a4e76
-      size: 368
-    - path: results/plots
-      md5: 49124f4080fe312aa9120b784e208bcc.dir
-      size: 2450
->>>>>>> 5d3c526a483fd73717ccc1884a5521c48dc75ab8
+      md5: 000ce46afc4351e72cea372e87ee8223.dir
+      size: 608
       nfiles: 7
