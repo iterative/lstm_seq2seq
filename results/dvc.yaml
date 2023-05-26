@@ -3,5 +3,4 @@ params:
 metrics:
 - metrics.json
 plots:
-- plots/metrics:
-    x: step
+- plots/metrics
