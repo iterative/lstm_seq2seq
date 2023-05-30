@@ -31,17 +31,17 @@ stages:
           duration: 00:00:30:00
           max_epochs: 2
           optim:
-            lr: 0.01
+            lr: 0.03
         num_samples: 100000
         seed: 423
     outs:
     - path: model/model.ckpt
-      md5: 20b304c5ca340af0321ece421cb5a45d
-      size: 19969
+      md5: f8155319868f22db1c545bb159c599ef
+      size: 19457
     - path: results/metrics.json
-      md5: 8ffff12d04ac63dd1fab04d99aa5d22e
-      size: 349
+      md5: 8f7065c979866cd8c07f4ba4138550c6
+      size: 367
     - path: results/plots
-      md5: 000ce46afc4351e72cea372e87ee8223.dir
-      size: 608
+      md5: 789e633700a95f8ac2c27590cfd67c84.dir
+      size: 600
       nfiles: 7
