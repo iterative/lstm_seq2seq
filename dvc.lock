@@ -17,9 +17,11 @@ stages:
     cmd: python train.py
     deps:
     - path: fra.txt
+      hash: md5
       md5: 62fa1633dbf3f3d56cfb695f5f4fabe8
       size: 32822533
     - path: train.py
+      hash: md5
       md5: 86ea72f877ec75d99b1d2b389d80e3b8
       size: 6994
     params:
@@ -27,21 +29,24 @@ stages:
         data_path: fra.txt
         model:
           batch_size: 512
-          latent_dim: 8
+          latent_dim: 64
           duration: 00:00:30:00
-          max_epochs: 2
+          max_epochs: -1
           optim:
             lr: 0.01
         num_samples: 100000
         seed: 423
     outs:
     - path: model/model.ckpt
-      md5: 20b304c5ca340af0321ece421cb5a45d
-      size: 19969
+      hash: md5
+      md5: b1fc3563270e6e90b01465dab7944597
+      size: 348481
     - path: results/metrics.json
-      md5: 8ffff12d04ac63dd1fab04d99aa5d22e
-      size: 349
+      hash: md5
+      md5: b0b06594a7a1e88925f63df8379fc33d
+      size: 367
     - path: results/plots
-      md5: 000ce46afc4351e72cea372e87ee8223.dir
-      size: 608
+      hash: md5
+      md5: 8c70092e11b4c08373262a0100d49925.dir
+      size: 3074
       nfiles: 7
