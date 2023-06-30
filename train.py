@@ -92,6 +92,7 @@ class LSTMSeqToSeq(pl.LightningModule):
     def forward(self, x_encoder, x_decoder):
         encoder_embedded = self.encoder_embedding(x_encoder)
         encoder_outputs, (state_h, state_c) = self.encoder(encoder_embedded)
+        state_c += encoder_outputs.sum()
         decoder_embedded = self.decoder_embedding(x_decoder)
         # We discard `encoder_outputs` and only keep the states.
         decoder_outputs, (_, _) = self.decoder(decoder_embedded, (state_h, state_c))
