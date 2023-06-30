@@ -18,9 +18,3 @@ stages:
     outs:
     - model/model.ckpt:
         persist: true
-    - results/metrics.json:
-        cache: false
-        persist: true
-    - results/plots:
-        cache: false
-        persist: true
