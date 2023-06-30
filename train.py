@@ -92,6 +92,7 @@ class LSTMSeqToSeq(pl.LightningModule):
     def forward(self, x_encoder, x_decoder):
         encoder_embedded = self.encoder_embedding(x_encoder)
         encoder_outputs, (state_h, state_c) = self.encoder(encoder_embedded)
+        state_c += encoder_outputs.sum() # see https://github.com/pytorch/pytorch/issues/96416
         decoder_embedded = self.decoder_embedding(x_decoder)
         # We discard `encoder_outputs` and only keep the states.
         decoder_outputs, (_, _) = self.decoder(decoder_embedded, (state_h, state_c))
@@ -158,7 +159,7 @@ batch_size = params["model"]["batch_size"]
 train_loader = torch.utils.data.DataLoader(train, batch_size=batch_size)
 val_loader = torch.utils.data.DataLoader(val, batch_size=batch_size)
 
-exp = Live("results", save_dvc_exp=True)
+exp = Live("dvclive/first_stage", save_dvc_exp=True)
 live = DVCLiveLogger(report=None, experiment=exp)
 checkpoint = pl.callbacks.ModelCheckpoint(
         dirpath="model",
