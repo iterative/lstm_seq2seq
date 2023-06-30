@@ -132,6 +132,8 @@ arch = LSTMSeqToSeq(
     latent_dim=params["model"]["latent_dim"],
     optim_params=params["model"]["optim"],
 )
+device = torch.device("cpu")
+arch.to(device)
 
 # load the data
 class CustomDataset(torch.utils.data.Dataset):
