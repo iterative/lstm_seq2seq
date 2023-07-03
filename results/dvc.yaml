@@ -3,4 +3,8 @@ params:
 metrics:
 - metrics.json
 plots:
-- plots/metrics
+- plots/metrics:
+    x: step
+artifacts:
+  best:
+    path: ../DvcLiveLogger/dvclive_run/checkpoints/epoch=1-step=4.ckpt
