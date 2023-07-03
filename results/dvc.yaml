@@ -3,4 +3,8 @@ params:
 metrics:
 - metrics.json
 plots:
-- plots/metrics
+- plots/metrics:
+    x: step
+artifacts:
+  best:
+    path: ../model/model-v2.ckpt
