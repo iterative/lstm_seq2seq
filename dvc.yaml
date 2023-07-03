@@ -16,7 +16,7 @@ stages:
     params:
     - params.yaml:
     outs:
-    - model/model.ckpt:
+    - DvcLiveLogger:
         persist: true
     - results/metrics.json:
         cache: false
