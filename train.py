@@ -173,3 +173,4 @@ trainer = pl.Trainer(max_epochs=params["model"]["max_epochs"], logger=[live],
                      callbacks=[timer, checkpoint])
 trainer.fit(model=arch, train_dataloaders=train_loader,
         val_dataloaders=val_loader)
+import pdb; pdb.set_trace()
