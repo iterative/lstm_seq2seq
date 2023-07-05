@@ -16,8 +16,7 @@ stages:
     params:
     - params.yaml:
     outs:
-    - model/model.ckpt:
-        persist: true
+    - model
     - results/metrics.json:
         cache: false
         persist: true

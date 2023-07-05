@@ -21,8 +21,9 @@ stages:
       md5: 62fa1633dbf3f3d56cfb695f5f4fabe8
       size: 32822533
     - path: train.py
-      md5: 86ea72f877ec75d99b1d2b389d80e3b8
-      size: 6994
+      hash: md5
+      md5: d4df67f8597632c6f1817cfdb0c68642
+      size: 7079
     params:
       params.yaml:
         data_path: fra.txt
@@ -33,16 +34,20 @@ stages:
           max_epochs: 2
           optim:
             lr: 0.01
-        num_samples: 100000
+        num_samples: 1001
         seed: 423
     outs:
-    - path: model/model.ckpt
-      md5: 20b304c5ca340af0321ece421cb5a45d
-      size: 19969
+    - path: model
+      hash: md5
+      md5: ab2807c0fb016e2405f3e79bb1251315.dir
+      size: 17345
+      nfiles: 1
     - path: results/metrics.json
-      md5: 8ffff12d04ac63dd1fab04d99aa5d22e
-      size: 349
+      hash: md5
+      md5: bdbb8766b8ddc2d1afa6c595197368ca
+      size: 256
     - path: results/plots
-      md5: 000ce46afc4351e72cea372e87ee8223.dir
-      size: 608
-      nfiles: 7
+      hash: md5
+      md5: ef7d44f899b130569bde708b2f31092d.dir
+      size: 238
+      nfiles: 5
