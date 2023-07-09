@@ -1,2 +1,2 @@
-latent_dim: 8
+latent_dim: 9
 optim_params: "{'lr': 0.01}"
