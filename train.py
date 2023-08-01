@@ -160,10 +160,9 @@ train_loader = torch.utils.data.DataLoader(train, batch_size=batch_size)
 val_loader = torch.utils.data.DataLoader(val, batch_size=batch_size)
 
 exp = Live("results", save_dvc_exp=True)
-live = DVCLiveLogger(report=None, experiment=exp)
+live = DVCLiveLogger(report=None, experiment=exp, log_model=True)
 checkpoint = pl.callbacks.ModelCheckpoint(
         dirpath="model",
-        filename="model",
         monitor="val_acc",
         mode="max",
         save_weights_only=True, every_n_epochs=1)

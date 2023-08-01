@@ -2,5 +2,7 @@
     remote = s3cache
 [hydra]
     enabled = True
+#[studio]
+#    offline = true
 ['remote "s3cache"']
     url = s3://lstm-seq2seq/cache
