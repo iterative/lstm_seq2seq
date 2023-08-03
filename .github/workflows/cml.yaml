@@ -19,7 +19,7 @@ jobs:
  
       - uses: iterative/setup-cml@v1
  
-      - uses: iterative/setup-dvc@v1
+      - uses: iterative/setup-dvc@prep-repo
  
       - uses: actions/setup-python@v2
         with:
@@ -37,7 +37,6 @@ jobs:
           DVCLIVE_LOG_LEVEL: DEBUG
           DVC_STUDIO_TOKEN: ${{ secrets.STUDIO_TOKEN }}
         run: |
-          cml ci
           pip install --upgrade -r requirements.txt
 
           dvc exp run --pull --allow-missing -S model=full
