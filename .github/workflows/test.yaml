@@ -1,0 +1,43 @@
+name: train
+ 
+on: [workflow_dispatch]
+
+permissions:
+  id-token: write
+  contents: write
+  pull-requests: write
+
+jobs:
+  run:
+    environment: aws
+    runs-on: [ubuntu-latest]
+ 
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+ 
+      - uses: iterative/setup-cml@v1
+ 
+      - uses: iterative/setup-dvc@prep-repo
+ 
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.10'
+
+      - uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-region: us-east-2
+          role-to-assume: arn:aws:iam::342840881361:role/SandboxUser
+          role-duration-seconds: 3600
+ 
+      - name: cml
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DVCLIVE_LOG_LEVEL: DEBUG
+          DVC_STUDIO_TOKEN: ${{ secrets.STUDIO_TOKEN }}
+        run: |
+          pip install --upgrade -r requirements.txt
+
+          dvc exp run --pull --allow-missing -S model=small -S num_samples=1000
+          dvc exp push -v --rev HEAD origin
