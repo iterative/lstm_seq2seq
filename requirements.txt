@@ -1,5 +1,5 @@
 dvc[s3]>=2.38.1
-dvclive>=1.15.0
+dvclive>=2.15.0
 numpy
 lightning
 torch
