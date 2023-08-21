@@ -7,5 +7,5 @@ plots:
     x: step
 artifacts:
   best:
-    path: ../model/epoch=0-step=16.ckpt
+    path: artifacts/epoch=0-step=2-v1.ckpt
     type: model
