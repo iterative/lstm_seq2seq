@@ -1,6 +1,15 @@
 name: train
  
-on: [workflow_dispatch]
+on:
+  workflow_dispatch:
+    inputs:
+      model:
+        type: choice
+        description: Model type to train
+        default: 'small'
+        options:
+        - full
+        - small
 
 permissions:
   id-token: write
@@ -37,5 +46,5 @@ jobs:
         run: |
           pip install --upgrade -r requirements.txt
 
-          dvc exp run --pull --allow-missing -S model=full
+          dvc exp run --pull --allow-missing -S model=${{ github.event.inputs.model }}
           dvc exp push -v --rev HEAD origin
