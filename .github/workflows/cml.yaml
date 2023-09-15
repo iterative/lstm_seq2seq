@@ -25,7 +25,9 @@ jobs:
       - uses: actions/checkout@v3
         with:
           ref: ${{ github.event.pull_request.head.sha }}
- 
+
+      - uses: iterative/setup-cml@v1
+
       - uses: iterative/setup-dvc@v1
  
       - uses: actions/setup-python@v2
@@ -44,10 +46,8 @@ jobs:
           DVCLIVE_LOG_LEVEL: DEBUG
           DVC_STUDIO_TOKEN: ${{ secrets.STUDIO_TOKEN }}
         run: |
+          cml ci
           pip install --upgrade -r requirements.txt
-
-          git config user.name "Github-Bot"
-          git config user.email "Github-Bot@no-reply.com"
 
           dvc exp run --pull --allow-missing -S model=${{ github.event.inputs.model }}
           dvc exp push -v --rev HEAD origin
