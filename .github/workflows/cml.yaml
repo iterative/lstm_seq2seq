@@ -17,8 +17,6 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
  
-      - uses: iterative/setup-cml@v1
- 
       - uses: iterative/setup-dvc@v1
  
       - uses: actions/setup-python@v2
@@ -31,13 +29,12 @@ jobs:
           role-to-assume: arn:aws:iam::342840881361:role/SandboxUser
           role-duration-seconds: 3600
  
-      - name: cml
+      - name: train
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DVCLIVE_LOG_LEVEL: DEBUG
           DVC_STUDIO_TOKEN: ${{ secrets.STUDIO_TOKEN }}
         run: |
-          cml ci
           pip install --upgrade -r requirements.txt
 
           dvc exp run --pull --allow-missing -S model=full
