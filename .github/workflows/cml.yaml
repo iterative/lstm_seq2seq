@@ -44,8 +44,10 @@ jobs:
           DVCLIVE_LOG_LEVEL: DEBUG
           DVC_STUDIO_TOKEN: ${{ secrets.STUDIO_TOKEN }}
         run: |
-          cml ci
           pip install --upgrade -r requirements.txt
+
+          git config user.name "Github-Bot"
+          git config user.email "Github-Bot@no-reply.com"
 
           dvc exp run --pull --allow-missing -S model=${{ github.event.inputs.model }}
           dvc exp push -v --rev HEAD origin
