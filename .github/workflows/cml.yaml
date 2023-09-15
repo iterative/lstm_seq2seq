@@ -39,3 +39,4 @@ jobs:
 
           dvc exp run --pull --allow-missing -S model=full
           dvc exp push -v --rev HEAD origin
+          gto -v register best

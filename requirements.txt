@@ -1,5 +1,6 @@
 dvc[s3]>=2.38.1
 dvclive>=2.15.0
+gto>=1.2.0
 numpy
 lightning
 torch
