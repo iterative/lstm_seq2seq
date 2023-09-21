@@ -4,6 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       exp_run_args:
+        type: string
+        description: 'Any args to pass to dvc exp run'
+        required: true
 
 permissions:
   id-token: write
@@ -40,7 +43,7 @@ jobs:
         run: |
           pip install --upgrade -r requirements.txt
 
-          dvc pull
+          dvc pull --allow-missing
           dvc exp run --queue ${{ inputs.exp_run_args }}
           dvc exp run --run-all
           dvc exp push -v --rev HEAD origin
