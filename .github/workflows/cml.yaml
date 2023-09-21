@@ -3,7 +3,7 @@ name: train
 on:
   workflow_dispatch:
     inputs:
-      exp_run_args
+      exp_run_args:
 
 permissions:
   id-token: write
