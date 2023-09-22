@@ -33,23 +33,28 @@ stages:
           batch_size: 512
           latent_dim: 8
           duration: 00:00:30:00
-          max_epochs: 6
+          max_epochs: 2
           optim:
-            lr: 0.01
-        num_samples: 10000
+            lr: 0.003
+        num_samples: 100000
         seed: 423
     outs:
     - path: model
       hash: md5
-      md5: 7006e6dfdcbce27a2362214995586475.dir
-      size: 18561
+      md5: c47d332dc17c09b71d13c8e45f15d208.dir
+      size: 19905
+      nfiles: 1
+    - path: results/artifacts
+      hash: md5
+      md5: c47d332dc17c09b71d13c8e45f15d208.dir
+      size: 19905
       nfiles: 1
     - path: results/metrics.json
       hash: md5
-      md5: 098423a9c88c180638b8c06bc5457c53
-      size: 256
+      md5: b39f9b0e772aad648358bd3c337e35db
+      size: 369
     - path: results/plots
       hash: md5
-      md5: ec750cc202d7ea5723c50a8502249e73.dir
-      size: 149
-      nfiles: 5
+      md5: 0ebc48b6a65ac2eae446aa3793891ef5.dir
+      size: 603
+      nfiles: 7
