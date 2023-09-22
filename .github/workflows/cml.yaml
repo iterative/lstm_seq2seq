@@ -47,10 +47,4 @@ jobs:
           dvc pull --allow-missing
           dvc exp run --queue ${{ inputs.exp_run_args }}
           dvc exp run --run-all
-
-          echo "GITHUB_SHA: $GITHUB_SHA"
-          echo "GITHUB_REF: $GITHUB_REF"
-          git status
-          dvc exp list -A
-          dvc exp show -A --no-pager
           dvc exp push -v -A origin
