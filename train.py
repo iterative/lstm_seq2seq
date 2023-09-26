@@ -3,11 +3,13 @@ import numpy as np
 import torch
 import pytorch_lightning as pl
 import torchmetrics
-from dvc.api import params_show
+from ruamel.yaml import YAML
 from dvclive import Live
 from dvclive.lightning import DVCLiveLogger
 
-params = params_show()
+yaml = YAML(typ="safe")
+
+params = yaml.load(open("params.yaml", encoding="utf-8"))
 
 # Vectorize the data.
 input_texts = []
