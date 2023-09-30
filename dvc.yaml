@@ -24,6 +24,7 @@ stages:
         cache: false
 params:
 - results/params.yaml
+- params.yaml
 metrics:
 - results/metrics.json
 plots:

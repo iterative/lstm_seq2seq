@@ -5,6 +5,3 @@ model:
   max_epochs: 2
   optim:
     lr: 0.01
-data_path: fra.txt
-num_samples: 1013
-seed: 423

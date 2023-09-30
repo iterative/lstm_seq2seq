@@ -1,3 +1,6 @@
 latent_dim: 8
 optim_params:
   lr: 0.01
+data_path: fra.txt
+num_samples: 1013
+seed: 423
