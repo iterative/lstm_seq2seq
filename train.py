@@ -161,7 +161,7 @@ batch_size = params["model"]["batch_size"]
 train_loader = torch.utils.data.DataLoader(train, batch_size=batch_size)
 val_loader = torch.utils.data.DataLoader(val, batch_size=batch_size)
 
-with Live("results", save_dvc_exp=True, system_metrics=["cpu_usage", "ram_usage"]) as exp:
+with Live("results", save_dvc_exp=True) as exp:
     live = DVCLiveLogger(report=None, experiment=exp, log_model=True)
     checkpoint = pl.callbacks.ModelCheckpoint(
             dirpath="model",

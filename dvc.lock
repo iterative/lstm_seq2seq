@@ -15,6 +15,10 @@ stages:
       hash: md5
       md5: f16099673fd64e9fda1e17927ad02248
       size: 34292144
+      cloud:
+        s3cache:
+          etag: f16099673fd64e9fda1e17927ad02248
+          version_id: LT7bcG92.8FwBXrjkoJsoLPvp7aF76vf
   train:
     cmd: python train.py
     deps:
@@ -24,8 +28,8 @@ stages:
       size: 34292144
     - path: train.py
       hash: md5
-      md5: ddadab2f6a637889a064bf92c0822e4a
-      size: 7230
+      md5: 03c48b33bda12a7ecf3f2acf2a378ac2
+      size: 7187
     params:
       params.yaml:
         data_path: fra.txt
@@ -41,20 +45,27 @@ stages:
     outs:
     - path: model
       hash: md5
-      md5: 277d85c2530c72a36367c2e094cf576d.dir
-      size: 18561
-      nfiles: 1
+      files:
+      - relpath: epoch=2-step=48.ckpt
+        md5: 1a46fc33614cd4365fb7e8a954bf5ace
+        size: 18561
+        cloud:
+          s3cache:
+            etag: 1a46fc33614cd4365fb7e8a954bf5ace
+            version_id: BeIdsSZuEnUSvO9bcPdimjyTE0o2sZhi
     - path: results/artifacts
       hash: md5
-      md5: 4ada5120b2a0a33e6e47d0573376bd67.dir
-      size: 72836
-      nfiles: 4
+      files:
+      - relpath: epoch=2-step=48.ckpt
+        md5: 1a46fc33614cd4365fb7e8a954bf5ace
+        size: 18561
+        cloud:
+          s3cache:
+            etag: 1a46fc33614cd4365fb7e8a954bf5ace
+            version_id: ARtUGaBEsqZ.HQBzUNjqopL3IHqfDscY
     - path: results/metrics.json
       hash: md5
-      md5: 5c60b442a628cb48df1d3aeca28f3878
-      size: 251
+      md5: c75c4dd2c2553ee4f9e78c6fc303ea12
+      size: 365
     - path: results/plots
       hash: md5
-      md5: a757145ea4c486b93540e2285b3ac115.dir
-      size: 246
-      nfiles: 5

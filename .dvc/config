@@ -4,3 +4,4 @@
     enabled = True
 ['remote "s3cache"']
     url = s3://dave-sandbox-versioning/lstm-seq2seq/cache
+    version_aware = True
