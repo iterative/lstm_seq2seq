@@ -161,16 +161,16 @@ batch_size = params["model"]["batch_size"]
 train_loader = torch.utils.data.DataLoader(train, batch_size=batch_size)
 val_loader = torch.utils.data.DataLoader(val, batch_size=batch_size)
 
-exp = Live("results", save_dvc_exp=True)
-live = DVCLiveLogger(report=None, experiment=exp, log_model=True)
-checkpoint = pl.callbacks.ModelCheckpoint(
-        dirpath="model",
-        monitor="val_acc",
-        mode="max",
-        save_weights_only=True, every_n_epochs=1)
-timer = pl.callbacks.Timer(duration=params["model"]["duration"])
+with Live("results", save_dvc_exp=True, system_metrics=["cpu_usage", "ram_usage"]) as exp:
+    live = DVCLiveLogger(report=None, experiment=exp, log_model=True)
+    checkpoint = pl.callbacks.ModelCheckpoint(
+            dirpath="model",
+            monitor="val_acc",
+            mode="max",
+            save_weights_only=True, every_n_epochs=1)
+    timer = pl.callbacks.Timer(duration=params["model"]["duration"])
 
-trainer = pl.Trainer(max_epochs=params["model"]["max_epochs"], logger=[live],
-                     callbacks=[timer, checkpoint])
-trainer.fit(model=arch, train_dataloaders=train_loader,
-        val_dataloaders=val_loader)
+    trainer = pl.Trainer(max_epochs=params["model"]["max_epochs"], logger=[live],
+                         callbacks=[timer, checkpoint])
+    trainer.fit(model=arch, train_dataloaders=train_loader,
+            val_dataloaders=val_loader)
