@@ -171,6 +171,8 @@ checkpoint = pl.callbacks.ModelCheckpoint(
 timer = pl.callbacks.Timer(duration=params["model"]["duration"])
 
 trainer = pl.Trainer(max_epochs=params["model"]["max_epochs"], logger=[live],
-                     callbacks=[timer, checkpoint])
+                     callbacks=[timer, checkpoint],
+                     accelerator="gpu", devices=4, strategy="ddp"
+                )
 trainer.fit(model=arch, train_dataloaders=train_loader,
         val_dataloaders=val_loader)
