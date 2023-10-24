@@ -172,7 +172,7 @@ timer = pl.callbacks.Timer(duration=params["model"]["duration"])
 
 trainer = pl.Trainer(max_epochs=params["model"]["max_epochs"], logger=[live],
                      callbacks=[timer, checkpoint],
-                     accelerator="gpu", devices=4, strategy="ddp"
+                     accelerator="gpu", devices=1, strategy="ddp", num_nodes=4
                 )
 trainer.fit(model=arch, train_dataloaders=train_loader,
         val_dataloaders=val_loader)

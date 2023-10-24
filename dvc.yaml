@@ -9,7 +9,7 @@ stages:
     outs:
     - fra.txt
   train:
-    cmd: python train.py
+    cmd: /opt/slurm/bin/srun python train.py
     deps:
     - fra.txt
     - train.py
@@ -31,5 +31,5 @@ plots:
     x: step
 artifacts:
   best:
-    path: results/artifacts/epoch=0-step=2.ckpt
+    path: results/artifacts/epoch=1-step=32.ckpt
     type: model
