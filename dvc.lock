@@ -36,7 +36,7 @@ stages:
           max_epochs: 2
           optim:
             lr: 0.01
-        num_samples: 1013
+        num_samples: 10000
         seed: 423
     outs:
     - path: model
