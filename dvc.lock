@@ -24,8 +24,8 @@ stages:
       size: 34292144
     - path: train.py
       hash: md5
-      md5: d4df67f8597632c6f1817cfdb0c68642
-      size: 7079
+      md5: 9505d81175e09e8cc80a8905c95abed7
+      size: 7136
     params:
       params.yaml:
         data_path: fra.txt
@@ -41,13 +41,13 @@ stages:
     outs:
     - path: model
       hash: md5
-      md5: 9cee20d06392879aec5686cce75fed85.dir
-      size: 17153
+      md5: b4e402de57bdfa7871c9ea74562482f5.dir
+      size: 18561
       nfiles: 1
     - path: results/artifacts
       hash: md5
-      md5: 9cee20d06392879aec5686cce75fed85.dir
-      size: 17153
+      md5: b4e402de57bdfa7871c9ea74562482f5.dir
+      size: 18561
       nfiles: 1
     - path: results/metrics.json
       hash: md5
