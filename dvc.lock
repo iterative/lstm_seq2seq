@@ -36,25 +36,25 @@ stages:
           max_epochs: 2
           optim:
             lr: 0.01
-        num_samples: 10000
+        num_samples: 1001
         seed: 423
     outs:
     - path: model
       hash: md5
-      md5: b4e402de57bdfa7871c9ea74562482f5.dir
-      size: 18561
+      md5: ce085704bd53a1340687e564ab2b469a.dir
+      size: 17586
       nfiles: 1
     - path: results/artifacts
       hash: md5
-      md5: b4e402de57bdfa7871c9ea74562482f5.dir
-      size: 18561
+      md5: ce085704bd53a1340687e564ab2b469a.dir
+      size: 17586
       nfiles: 1
     - path: results/metrics.json
       hash: md5
-      md5: e525dbdc2466b77f199fe5fe24afc549
+      md5: ce6b32e6d177659d3b1840d26c1133c8
       size: 256
     - path: results/plots
       hash: md5
-      md5: 1dd4ea44497391604fc8c379789b52b4.dir
-      size: 240
+      md5: 663fd7f601b378570336b56d687481a9.dir
+      size: 239
       nfiles: 5
