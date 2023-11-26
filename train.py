@@ -5,7 +5,7 @@ import pytorch_lightning as pl
 import torchmetrics
 from ruamel.yaml import YAML
 from dvclive import Live
-from dvclive.lightning import DVCLiveLogger
+from lightning.pytorch.loggers import DVCLiveLogger
 
 yaml = YAML(typ="safe")
 
