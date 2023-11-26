@@ -6,5 +6,5 @@ model:
   optim:
     lr: 0.01
 data_path: fra.txt
-num_samples: 10000
+num_samples: 1005
 seed: 423
