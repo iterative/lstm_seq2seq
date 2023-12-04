@@ -1,11 +1,12 @@
 import os
 import numpy as np
 import torch
-import pytorch_lightning as pl
+import lightning
+from lightning.pytorch import callbacks
 import torchmetrics
 from ruamel.yaml import YAML
 from dvclive import Live
-from dvclive.lightning import DVCLiveLogger
+from lightning.pytorch.loggers import DVCLiveLogger
 
 yaml = YAML(typ="safe")
 
@@ -76,7 +77,7 @@ for i, (input_text, target_text) in enumerate(zip(input_texts, target_texts)):
 
 
 # Define the model 
-class LSTMSeqToSeq(pl.LightningModule):
+class LSTMSeqToSeq(lightning.LightningModule):
     def __init__(self, latent_dim, optim_params):
         super().__init__()
         # Log parameters (saves them to self.hparams)
@@ -163,14 +164,14 @@ val_loader = torch.utils.data.DataLoader(val, batch_size=batch_size)
 
 exp = Live("results", save_dvc_exp=True)
 live = DVCLiveLogger(report=None, experiment=exp, log_model=True)
-checkpoint = pl.callbacks.ModelCheckpoint(
+checkpoint = callbacks.ModelCheckpoint(
         dirpath="model",
         monitor="val_acc",
         mode="max",
         save_weights_only=True, every_n_epochs=1)
-timer = pl.callbacks.Timer(duration=params["model"]["duration"])
+timer = callbacks.Timer(duration=params["model"]["duration"])
 
-trainer = pl.Trainer(max_epochs=params["model"]["max_epochs"], logger=[live],
+trainer = lightning.Trainer(max_epochs=params["model"]["max_epochs"], logger=[live],
                      callbacks=[timer, checkpoint])
 trainer.fit(model=arch, train_dataloaders=train_loader,
         val_dataloaders=val_loader)
