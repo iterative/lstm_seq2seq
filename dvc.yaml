@@ -31,5 +31,5 @@ plots:
     x: step
 artifacts:
   best:
-    path: results/artifacts/epoch=1-step=32.ckpt
+    path: results/artifacts/epoch=332-step=13320.ckpt
     type: model
