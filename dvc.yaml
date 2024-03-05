@@ -22,14 +22,11 @@ stages:
         cache: false
     - results/plots:
         cache: false
-params:
-- results/params.yaml
 metrics:
+- dvclive/metrics.json
 - results/metrics.json
 plots:
+- dvclive/plots/metrics:
+    x: step
 - results/plots/metrics:
     x: step
-artifacts:
-  best:
-    path: results/artifacts/epoch=0-step=2.ckpt
-    type: model
