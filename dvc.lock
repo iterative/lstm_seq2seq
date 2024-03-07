@@ -8,8 +8,8 @@ stages:
     deps:
     - path: http://www.manythings.org/anki/fra-eng.zip
       hash: md5
-      checksum: '29366693926503416364759562686349725439'
-      size: 7757635
+      checksum: '323911946554506536864863635156513540925'
+      size: 7833145
     outs:
     - path: fra.txt
       hash: md5

@@ -18,10 +18,8 @@ stages:
     outs:
     - model
     - results/artifacts
-    - results/metrics.json:
-        cache: false
-    - results/plots:
-        cache: false
+    - results/metrics.json
+    - results/plots
 params:
 - results/params.yaml
 metrics:
