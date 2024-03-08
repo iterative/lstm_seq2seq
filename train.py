@@ -137,6 +137,7 @@ arch = LSTMSeqToSeq(
     latent_dim=params["model"]["latent_dim"],
     optim_params=params["model"]["optim"],
 )
+arch = arch.compile(model, backend="hidet")
 
 # load the data
 class CustomDataset(torch.utils.data.Dataset):
